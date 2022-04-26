@@ -92,7 +92,7 @@ void *consumer_routine(void *arg) {
 
   pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, nullptr);
   auto *params = (func_consumer_params *)arg;
-  long long *sum = new long long();
+  long long *sum = (long long *)calloc(1, sizeof(long long));
 
   while (!get_finish(params->finish)) {
     pthread_mutex_lock(&ready_mutex);
