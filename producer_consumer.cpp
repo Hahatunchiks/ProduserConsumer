@@ -60,7 +60,7 @@ void *producer_routine(void *arg) {
   // read data, loop through each value and update the value, notify consumer,
   // wait for consumer to process
 
-  while (params->src  >> *params->val) {
+  while (params->src >> *params->val) {
     pthread_mutex_lock(&ready_mutex);
     params->ready = true;
     pthread_cond_signal(&cv_consumer);

@@ -60,7 +60,6 @@ TEST_CASE("is_get_tid_returns_same_in_same_thread") {
   get_tid(0);  // clear vector
 }
 
-
 TEST_CASE("run_threads_one_consumer_one_val") {
   std::vector<int> sums{INT_MIN, -13, 0, 1, 2, 19, INT_MAX};
 
@@ -91,7 +90,7 @@ TEST_CASE("run_threads_one_consumer_500_vals") {
       "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "
       "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "
       "1 1 1 1 1 1 1 1 1 1 1 1 1 1");
-  CHECK(run_threads(1, 0, false,is) == 500);
+  CHECK(run_threads(1, 0, false, is) == 500);
 }
 
 TEST_CASE("run_threads_28_cosumers_500_vals") {
@@ -117,7 +116,6 @@ TEST_CASE("run_threads_28_cosumers_500_vals") {
       "1 1 1 1 1 1 1 1 1 1 1 1 1 1");
   CHECK(run_threads(28, 0, false, is) == 500);
 }
-
 
 TEST_CASE("run_threads_mnogo_consumers_500_vals") {
   std::istringstream is(
